@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cgnawj58bhjbk"]
+
+[ext_resource type="Texture2D" uid="uid://b7rfr1u3ljivl" path="res://img/jungle.jpg" id="1_qmocv"]
+[ext_resource type="Script" uid="uid://xi4jxnqmn4ph" path="res://scripts/frog_button.gd" id="2_qmocv"]
+[ext_resource type="Texture2D" uid="uid://c6bfu5gnyxosp" path="res://img/azure.png" id="2_ri7fp"]
+[ext_resource type="AudioStream" uid="uid://dfb4bjsujn0na" path="res://sounds/azure.mp3" id="4_ub7n0"]
+
+[node name="FrogPage" type="Node2D" unique_id=2068100718]
+
+[node name="Background" type="TextureRect" parent="." unique_id=2120598834]
+offset_left = -189.0
+offset_top = -1.0
+offset_right = 276.0
+offset_bottom = 569.0
+texture = ExtResource("1_qmocv")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=182222931]
+offset_left = 25.0
+offset_top = 36.0
+offset_right = 245.0
+offset_bottom = 257.0
+texture_normal = ExtResource("2_ri7fp")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("2_qmocv")
+
+[node name="FrogSound" type="AudioStreamPlayer" parent="." unique_id=1542687905]
+stream = ExtResource("4_ub7n0")
+volume_db = 11.86
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=914733266]
+offset_left = 73.0
+offset_top = 262.0
+offset_right = 201.0
+offset_bottom = 302.0
+text = "A Frog"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
