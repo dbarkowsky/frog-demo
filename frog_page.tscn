@@ -16,20 +16,32 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[node name="MarginContainer" type="Node2D" unique_id=47518555]
+[node name="MarginContainer" type="Control" unique_id=1211139788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
 script = ExtResource("1_qmocv")
 
 [node name="FrogSound" type="AudioStreamPlayer" parent="." unique_id=1542687905]
 
 [node name="FrogText" type="RichTextLabel" parent="." unique_id=914733266]
+layout_mode = 0
 offset_left = 46.0
 offset_top = 336.0
 offset_right = 230.0
 offset_bottom = 401.0
+mouse_filter = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FrogPic" type="TextureButton" parent="." unique_id=182222931]
+layout_mode = 0
 offset_left = 13.0
 offset_top = 26.0
 offset_right = 258.0

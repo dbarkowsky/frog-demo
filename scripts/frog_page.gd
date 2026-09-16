@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var sound: AudioStreamPlayer = $FrogSound
 @onready var image: TextureButton = $FrogPic
