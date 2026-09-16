@@ -1,42 +1,41 @@
 [gd_scene format=3 uid="uid://cgnawj58bhjbk"]
 
-[ext_resource type="Texture2D" uid="uid://b7rfr1u3ljivl" path="res://img/jungle.jpg" id="1_qmocv"]
-[ext_resource type="Script" uid="uid://xi4jxnqmn4ph" path="res://scripts/frog_button.gd" id="2_qmocv"]
-[ext_resource type="Texture2D" uid="uid://c6bfu5gnyxosp" path="res://img/azure.png" id="2_ri7fp"]
-[ext_resource type="AudioStream" uid="uid://dfb4bjsujn0na" path="res://sounds/azure.mp3" id="4_ub7n0"]
+[ext_resource type="Script" uid="uid://b555gyof80rs2" path="res://scripts/frog_page.gd" id="1_qmocv"]
 
-[node name="FrogPage" type="Node2D" unique_id=2068100718]
+[sub_resource type="GDScript" id="GDScript_evkst"]
+script/source = "extends TextureButton
 
-[node name="Background" type="TextureRect" parent="." unique_id=2120598834]
-offset_left = -189.0
-offset_top = -1.0
-offset_right = 276.0
-offset_bottom = 569.0
-texture = ExtResource("1_qmocv")
-expand_mode = 3
-stretch_mode = 6
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=182222931]
-offset_left = 25.0
-offset_top = 36.0
-offset_right = 245.0
-offset_bottom = 257.0
-texture_normal = ExtResource("2_ri7fp")
-ignore_texture_size = true
-stretch_mode = 4
-script = ExtResource("2_qmocv")
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="MarginContainer" type="Node2D" unique_id=47518555]
+script = ExtResource("1_qmocv")
 
 [node name="FrogSound" type="AudioStreamPlayer" parent="." unique_id=1542687905]
-stream = ExtResource("4_ub7n0")
-volume_db = 11.86
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=914733266]
-offset_left = 73.0
-offset_top = 262.0
-offset_right = 201.0
-offset_bottom = 302.0
-text = "A Frog"
+[node name="FrogText" type="RichTextLabel" parent="." unique_id=914733266]
+offset_left = 46.0
+offset_top = 336.0
+offset_right = 230.0
+offset_bottom = 401.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[node name="FrogPic" type="TextureButton" parent="." unique_id=182222931]
+offset_left = 13.0
+offset_top = 26.0
+offset_right = 258.0
+offset_bottom = 289.0
+ignore_texture_size = true
+stretch_mode = 4
+script = SubResource("GDScript_evkst")
+
+[connection signal="pressed" from="FrogPic" to="FrogPic" method="_on_pressed"]

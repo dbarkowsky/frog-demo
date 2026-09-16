@@ -1,3 +1,24 @@
 [gd_scene format=3 uid="uid://dkgvkqjko5em7"]
 
-[node name="Node2D" type="Node2D" unique_id=1047584529]
+[ext_resource type="Script" uid="uid://do7qhww2kuvba" path="res://scripts/main.gd" id="1_ig7tw"]
+
+[node name="Node2D" type="Control" unique_id=1442086158]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ig7tw")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=131986864]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1806159859]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+scroll_hint_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=76535227]
+layout_mode = 2

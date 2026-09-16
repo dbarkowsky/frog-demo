@@ -4,5 +4,11 @@
 		"latin": "Dendrobates tinctorius",
 		"img": "res://img/azure.png",
 		"audio": "res://sounds/azure.mp3"
+	},
+	{
+		"name": "Citronella",
+		"latin": "Dendrobates tinctorius",
+		"img": "res://img/citronella.png",
+		"audio": "res://sounds/citronella.mp3"
 	}
 ]
