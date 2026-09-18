@@ -4,6 +4,26 @@ const FROG_TEMPLATE = preload("res://frog_page.tscn")
 @onready var scroll: ScrollContainer = $ScrollContainer
 @onready var container: HBoxContainer = $ScrollContainer/HBoxContainer
 
+var swipe_start: Vector2 = Vector2.ZERO
+var minimum_drag: float = 100.0
+	
+func _input(event: InputEvent) -> void:
+		if event is InputEventScreenTouch:
+			if event.pressed:
+				swipe_start = event.position
+			else:
+				var swipe_vector = event.position - swipe_start
+				if swipe_vector.length() >= minimum_drag:
+					if abs(swipe_vector.x) > abs(swipe_vector.y):
+						var tween = create_tween()
+						tween.set_trans(Tween.TRANS_QUAD)
+						tween.set_ease(Tween.EASE_OUT)
+						if swipe_vector.x > 0:
+							print("Swiped Right")
+							tween.tween_property(scroll, "scroll_horizontal", 0, 0.5)
+						else:
+							print("Swiped Left")
+							tween.tween_property(scroll, "scroll_horizontal", 450, 0.5)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

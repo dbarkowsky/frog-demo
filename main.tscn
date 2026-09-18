@@ -14,11 +14,10 @@ script = ExtResource("1_ig7tw")
 layout_mode = 0
 offset_right = 269.0
 offset_bottom = 559.0
-mouse_filter = 0
+mouse_filter = 2
 mouse_force_pass_scroll_events = false
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
-scroll_hint_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=76535227]
 custom_minimum_size = Vector2(900, 0)
