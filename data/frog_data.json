@@ -10,5 +10,65 @@
 		"latin": "Dendrobates tinctorius",
 		"img": "res://img/citronella.png",
 		"audio": "res://sounds/citronella.mp3"
-	}
+	},
+	{
+		"name": "Oyapock",
+		"latin": "Dendrobates tinctorius",
+		"img": "res://img/oyapock.png",
+		"audio": "res://sounds/oyapock.mp3"
+	},
+	{
+		"name": "Powder Blue",
+		"latin": "Dendrobates tinctorius",
+		"img": "res://img/powder_blue.png",
+		"audio": "res://sounds/powder_blue.mp3"
+	},
+	{
+		"name": "Cobalt",
+		"latin": "Dendrobates tinctorius",
+		"img": "res://img/cobalt.png",
+		"audio": "res://sounds/cobalt.mp3"
+	},
+	{
+		"name": "Blue and Bronze (Super Blue)",
+		"latin": "Dendrobates auratus",
+		"img": "res://img/blue_and_bronze.png",
+		"audio": "res://sounds/blue_and_bronze.mp3"
+	},
+	{
+		"name": "Costa Rican Green",
+		"latin": "Dendrobates auratus",
+		"img": "res://img/costarican_green.png",
+		"audio": "res://sounds/costarican_green.mp3"
+	},
+	{
+		"name": "Yellow Banded",
+		"latin": "Dendrobates leucomelas",
+		"img": "res://img/yellow_banded.png",
+		"audio": "res://sounds/yellow_banded.mp3"
+	},
+	{
+		"name": "Golden",
+		"latin": "Phyllobates terribilis",
+		"img": "res://img/golden.png",
+		"audio": "res://sounds/golden.mp3"
+	},
+	{
+		"name": "Mint Green",
+		"latin": "Phyllobates terribilis",
+		"img": "res://img/mint_green.png",
+		"audio": "res://sounds/mint_green.mp3"
+	},
+	{
+		"name": "Santa Isabella",
+		"latin": "Epipedobates anthonyi",
+		"img": "res://img/santa_isabella.png",
+		"audio": "res://sounds/santa_isabella.mp3"
+	},
+	{
+		"name": "Strawberry",
+		"latin": "Oophaga pumilio",
+		"img": "res://img/strawberry.png",
+		"audio": "res://sounds/strawberry.mp3"
+	},
 ]

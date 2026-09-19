@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkgvkqjko5em7"]
 
 [ext_resource type="Script" uid="uid://do7qhww2kuvba" path="res://scripts/main.gd" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b7rfr1u3ljivl" path="res://img/jungle.jpg" id="2_0xm2m"]
 
 [node name="MainScreen" type="Control" unique_id=1442086158]
 custom_minimum_size = Vector2(270, 555)
@@ -9,3 +10,9 @@ anchors_preset = 0
 size_flags_horizontal = 0
 size_flags_vertical = 3
 script = ExtResource("1_ig7tw")
+
+[node name="Jungle" type="Sprite2D" parent="." unique_id=155131509]
+modulate = Color(0.23, 0.23, 0.23, 1)
+position = Vector2(169.25006, 283.87482)
+scale = Vector2(0.32773432, 0.32773432)
+texture = ExtResource("2_0xm2m")

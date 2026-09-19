@@ -59,7 +59,9 @@ func _input(event: InputEvent) -> void:
 							# Populate right frog
 							if centreFrogIndex < 0:
 								centreFrogIndex = frog_list.size() - 1
-							var next_frog_index = centreFrogIndex
+							var next_frog_index = centreFrogIndex - 1
+							if next_frog_index < 0:
+								next_frog_index = frog_list.size() - 1
 							var frog_data = frog_list[next_frog_index]
 							var new_frog = FROG_TEMPLATE.instantiate()
 							new_frog.global_position = positionArray[0]
