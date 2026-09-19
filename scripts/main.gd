@@ -29,7 +29,9 @@ func _input(event: InputEvent) -> void:
 							# User is trying to pan left							
 							# Delete left frog
 							remove_child(instanceArray[0])
+							instanceArray[0].queue_free()
 							# Animate frogs moving
+							instanceArray[1].stop_audio()
 							tween.tween_property(instanceArray[1], "global_position:x", positionArray[0].x, 0.5)
 							tween.tween_property(instanceArray[2], "global_position:x", positionArray[1].x, 0.5)
 							# Assign new array indexes
@@ -49,7 +51,9 @@ func _input(event: InputEvent) -> void:
 							# User is trying to pan right
 							# Delete left frog
 							remove_child(instanceArray[2])
+							instanceArray[2].queue_free()
 							# Animate frogs moving
+							instanceArray[1].stop_audio()
 							tween.tween_property(instanceArray[1], "global_position:x", positionArray[2].x, 0.5)
 							tween.tween_property(instanceArray[0], "global_position:x", positionArray[1].x, 0.5)
 							# Assign new array indexes

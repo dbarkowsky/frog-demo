@@ -19,3 +19,7 @@ func hydrate(frog: Dictionary) -> void:
 	sound.stream = load(frog.get("audio"))
 	image.texture_normal = load(frog.get("img"))
 	title.text = frog.get("name")
+	
+func stop_audio() -> void:
+	if sound and sound.playing:
+		sound.stop()
