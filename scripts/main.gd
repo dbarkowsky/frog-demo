@@ -5,11 +5,12 @@ const FROG_TEMPLATE = preload("res://frog_page.tscn")
 var swipe_start: Vector2 = Vector2.ZERO
 var minimum_drag: float = 100.0
 
-var frog_list: Array
+var frog_list: Array # list of all frog page instances
 # For all the following arrays,
 # it's intended that 0 = left, 1 = centre, 2 = right
 var instanceArray: Array
 var positionArray: Array
+var centreFrogIndex = 0 # Which frog is in the centre currently?
 	
 func _input(event: InputEvent) -> void:
 		if event is InputEventScreenTouch:
@@ -25,10 +26,46 @@ func _input(event: InputEvent) -> void:
 						tween.set_ease(Tween.EASE_OUT)
 						if swipe_vector.x > 0:
 							print("Swiped Right")
-							#tween.tween_property(scroll, "scroll_horizontal", 0, 0.5)
+							# User is trying to pan left							
+							# Delete left frog
+							remove_child(instanceArray[0])
+							# Animate frogs moving
+							tween.tween_property(instanceArray[1], "global_position:x", positionArray[0].x, 0.5)
+							tween.tween_property(instanceArray[2], "global_position:x", positionArray[1].x, 0.5)
+							# Assign new array indexes
+							instanceArray[0] = instanceArray[1]
+							instanceArray[1] = instanceArray[2]
+							centreFrogIndex = (centreFrogIndex + 1) % frog_list.size()
+							# Populate right frog
+							var next_frog_index = (centreFrogIndex + 1) % frog_list.size()
+							var frog_data = frog_list[next_frog_index]
+							var new_frog = FROG_TEMPLATE.instantiate()
+							new_frog.global_position = positionArray[2]
+							add_child(new_frog)
+							new_frog.hydrate(frog_data)
+							instanceArray[2] = new_frog
 						else:
 							print("Swiped Left")
-							#tween.tween_property(scroll, "scroll_horizontal", 450, 0.5)
+							# User is trying to pan right
+							# Delete left frog
+							remove_child(instanceArray[2])
+							# Animate frogs moving
+							tween.tween_property(instanceArray[1], "global_position:x", positionArray[2].x, 0.5)
+							tween.tween_property(instanceArray[0], "global_position:x", positionArray[1].x, 0.5)
+							# Assign new array indexes
+							instanceArray[2] = instanceArray[1]
+							instanceArray[1] = instanceArray[0]
+							centreFrogIndex -= 1
+							# Populate right frog
+							if centreFrogIndex < 0:
+								centreFrogIndex = frog_list.size() - 1
+							var next_frog_index = centreFrogIndex
+							var frog_data = frog_list[next_frog_index]
+							var new_frog = FROG_TEMPLATE.instantiate()
+							new_frog.global_position = positionArray[0]
+							add_child(new_frog)
+							new_frog.hydrate(frog_data)
+							instanceArray[0] = new_frog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
