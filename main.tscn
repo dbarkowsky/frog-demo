@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dkgvkqjko5em7"]
 
 [ext_resource type="Script" uid="uid://do7qhww2kuvba" path="res://scripts/main.gd" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://b7rfr1u3ljivl" path="res://img/jungle.jpg" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bxlijlyo7ag7x" path="res://img/jungle_leaves.png" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dvm6gqhv02ab" path="res://img/swipe.png" id="3_h2yge"]
 
 [node name="MainScreen" type="Control" unique_id=1442086158]
 custom_minimum_size = Vector2(270, 555)
@@ -13,6 +14,11 @@ script = ExtResource("1_ig7tw")
 
 [node name="Jungle" type="Sprite2D" parent="." unique_id=155131509]
 modulate = Color(0.23, 0.23, 0.23, 1)
-position = Vector2(169.25006, 283.87482)
-scale = Vector2(0.32773432, 0.32773432)
+position = Vector2(158.5, 271.58582)
+scale = Vector2(1.0715789, 1.0715787)
 texture = ExtResource("2_0xm2m")
+
+[node name="Swipe" type="Sprite2D" parent="." unique_id=525073122]
+position = Vector2(135.07137, 514.25)
+scale = Vector2(0.9081628, 0.9081628)
+texture = ExtResource("3_h2yge")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7rfr1u3ljivl"
-path="res://.godot/imported/jungle.jpg-2fecb9ab5f8d17d6e67d24a415fe3c3b.ctex"
+uid="uid://dhdm5uh87uffd"
+path="res://.godot/imported/stick.png-ea4b01fb892fdbede78d2d942425191d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/jungle.jpg"
-dest_files=["res://.godot/imported/jungle.jpg-2fecb9ab5f8d17d6e67d24a415fe3c3b.ctex"]
+source_file="res://img/stick.png"
+dest_files=["res://.godot/imported/stick.png-ea4b01fb892fdbede78d2d942425191d.ctex"]
 
 [params]
 
