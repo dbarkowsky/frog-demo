@@ -24,7 +24,7 @@ func _input(event: InputEvent) -> void:
 						tween.set_parallel()
 						tween.set_trans(Tween.TRANS_QUAD)
 						tween.set_ease(Tween.EASE_OUT)
-						if swipe_vector.x > 0:
+						if swipe_vector.x <= 0:
 							print("Swiped Right")
 							# User is trying to pan left							
 							# Delete left frog
