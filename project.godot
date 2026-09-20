@@ -13,12 +13,15 @@ config_version=5
 config/name="Frogs"
 run/main_scene="uid://dkgvkqjko5em7"
 config/features=PackedStringArray("4.6", "Mobile")
+boot_splash/stretch_mode=5
 config/icon="uid://c6bfu5gnyxosp"
 
 [display]
 
 window/size/viewport_width=270
 window/size/viewport_height=555
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/handheld/orientation=1
 
 [dotnet]
