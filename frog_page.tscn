@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgnawj58bhjbk"]
 
 [ext_resource type="Script" uid="uid://b555gyof80rs2" path="res://scripts/frog_page.gd" id="1_qmocv"]
+[ext_resource type="Texture2D" uid="uid://b500tcll04wl7" path="res://img/click.png" id="2_utv1b"]
 
 [sub_resource type="GDScript" id="GDScript_evkst"]
 script/source = "extends TextureButton
@@ -16,6 +17,44 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Animation" id="Animation_utv1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Click:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.45, 0.45)]
+}
+
+[sub_resource type="Animation" id="Animation_jhc63"]
+resource_name = "click"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Click:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.04, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.65, 0.65), Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmocv"]
+_data = {
+&"RESET": SubResource("Animation_utv1b"),
+&"click": SubResource("Animation_jhc63")
+}
+
 [node name="MarginContainer" type="Control" unique_id=1211139788]
 layout_mode = 3
 anchors_preset = 15
@@ -30,24 +69,60 @@ script = ExtResource("1_qmocv")
 
 [node name="FrogSound" type="AudioStreamPlayer" parent="." unique_id=1542687905]
 
-[node name="FrogText" type="RichTextLabel" parent="." unique_id=914733266]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 336.0
-offset_right = 230.0
-offset_bottom = 401.0
-mouse_filter = 2
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="FrogPic" type="TextureButton" parent="." unique_id=182222931]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 12.0
 offset_top = 26.0
-offset_right = 258.0
+offset_right = 257.0
 offset_bottom = 289.0
 ignore_texture_size = true
 stretch_mode = 4
 script = SubResource("GDScript_evkst")
+
+[node name="FrogText" type="RichTextLabel" parent="." unique_id=914733266]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 275.0
+offset_right = 257.0
+offset_bottom = 340.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 25
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrogLatin" type="RichTextLabel" parent="." unique_id=697768080]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 346.0
+offset_right = 244.0
+offset_bottom = 385.0
+horizontal_alignment = 1
+
+[node name="Click" type="Sprite2D" parent="." unique_id=1781859803]
+position = Vector2(227.00002, 235)
+rotation = -0.7330383
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_utv1b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=861272300]
+libraries/ = SubResource("AnimationLibrary_qmocv")
+autoplay = &"click"
+
+[node name="Waveform" type="TextureRect" parent="." unique_id=346116314]
+custom_minimum_size = Vector2(244, 153)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.089
+anchor_top = 0.73700005
+anchor_right = 0.88100004
+anchor_bottom = 0.9620001
+offset_left = -12.030001
+offset_top = -18.035034
+offset_right = 18.12999
+offset_bottom = 10.089966
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
 
 [connection signal="pressed" from="FrogPic" to="FrogPic" method="_on_pressed"]
